@@ -1,15 +1,14 @@
 (function() {
-  'use strict';
+	'use strict';
 
-  angular
-    .module('angularProject')
-    .controller('MainController', MainController);
+	angular
+		.module('angularProject')
+		.controller('MainController', MainController);
 
-  /** @ngInject */
-  function MainController($timeout, $rootScope) {
-    var vm = this;
-    $rootScope.withHeader = true;
-
-
-  }
+	/** @ngInject */
+	function MainController($rootScope) {
+		var controller = this;
+		$rootScope.withHeader = false;
+		$rootScope.viewClass = 'mainView';
+	}
 })();

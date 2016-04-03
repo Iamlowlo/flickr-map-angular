@@ -1,0 +1,21 @@
+.mainView{
+	height: 100%;
+	background: $color_accent_1;
+	position: relative;
+	.jumbo{
+		background: url(../assets/images/bg_main_jumbo.jpg);
+		background-size: cover;
+		height: 12em;
+		padding: 3em 1em;
+		text-align: center;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		width: 100%;
+	}
+	h1{ 
+		margin-bottom: 1em;
+	}
+}
+

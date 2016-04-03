@@ -39,8 +39,9 @@
 	&.primary{
 		background: $color_2;
 		color: $polite_white;
+		border-bottom: 3px solid $color_accent_2;
 		&:hover{
-			background: $color_3;
+			background: darken($color_2,10);
 		}
 		&.active{
 			background: $color_accent_2;

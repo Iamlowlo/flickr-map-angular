@@ -9,9 +9,9 @@ a:hover, a:focus {
 }
 
 .navbar {
-  position: relative;
+  position: absolute;
+  width: 100%;
   min-height: 50px;
-  margin-bottom: 20px;
   background-color: #222;
 
   &>a {
