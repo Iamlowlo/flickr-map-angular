@@ -6,8 +6,7 @@
 		.controller('DashboardController',DashboardController);
 
 	/** @ngInject */
-	function DashboardController($rootScope){
-		$rootScope.withHeader=true;
-		$rootScope.viewClass='dashboard';
+	function DashboardController($scope, AvailableOptionsFactory, $rootScope){
+		$scope.availableOptions = AvailableOptionsFactory;
 	}
 })();
