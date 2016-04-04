@@ -56,3 +56,22 @@
 		}
 	}
 }
+.sticker_list{
+	@extend .clearfix;
+	margin-left: -1em;
+	margin-right: -1em;
+	display: flex;
+	flex-wrap:wrap;
+  li{
+  	display: flex;
+    margin-bottom: 2em;
+  }
+  sticker{
+  	display: flex;
+  	flex-direction: column;
+  	flex: 1;
+  }
+	.sticker{
+		flex: 1;
+	}
+}

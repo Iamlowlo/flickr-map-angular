@@ -3,7 +3,7 @@
 
   angular
     .module('angularProject')
-    .directive('acmeNavbar', acmeNavbar);
+    .directive('acmeNavbar', ['$route',acmeNavbar]);
 
   /** @ngInject */
   function acmeNavbar() {
@@ -18,8 +18,9 @@
     return directive;
 
     /** @ngInject */
-    function NavbarController() {
+    function NavbarController($scope, $route) {
       var vm = this;
+      $scope.active = {href:$route.current.$$route.originalPath};
     }
   }
 

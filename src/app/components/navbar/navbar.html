@@ -1,6 +1,5 @@
 <nav class="navbar" ng-if="withHeader">
   <ul class="container clearfix">
-    <li class="active"><a ng-href="#">Main</a></li>
-    <li><a ng-href="#/dashboard">Dashboard</a></li>
+    <li ng-repeat="link in links" ng-class="{active : link.href == active.href}"><a ng-href="#{{link.href}}">{{link.title}}</a></li>
   </ul>
 </nav>

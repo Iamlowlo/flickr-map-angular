@@ -6,13 +6,17 @@
 	function AvailableOptionsFactory() {
 		return [
 			{	
-				title: 'Last 10 world wide pictures'
+				title: 'Last 10 world wide pictures',
+				img: 'test.jpg'
 			},{	
-				title: 'Last 50 pictures by city'
+				title: 'Last 5 pictures by city',
+				img: 'test.jpg'
 			},{	
-				title: 'Last 100 pictures near you'
+				title: 'Last 100 pictures near you',
+				img: 'test.jpg'
 			},{	
-				title: 'Last pictures taken by an user'
+				title: 'Last pictures taken by an user',
+				img: 'test.jpg'
 			}
 		]
 	}

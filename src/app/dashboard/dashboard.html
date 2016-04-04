@@ -1,4 +1,10 @@
-<h1>Hey I'm a dashboard</h1>
-<ul>
-	<li ng-repeat="option in availableOptions">{{option.title}}</li>
-</ul>
+<section class="container">
+  <header>
+    <h1>Dashboard</h1>
+  </header>
+  <ul class="sticker_list">
+    <li ng-repeat="option in availableOptions" class="col_xs_12_12 col_sm_6_12 col_md_4_12 col_xlg_3_12">
+      <sticker sticker-info='option'></sticker>
+    </li>
+  </ul>
+</section>

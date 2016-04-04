@@ -12,14 +12,16 @@
         controller: 'MainController',
         controllerAs: 'main',
         withHeader: false,
-        viewClass: 'mainView'
+        viewClass: 'mainView',
+        title: 'Main'
       })
       .when('/dashboard', {
         templateUrl: 'app/dashboard/dashboard.html',
         controller: 'DashboardController',
         controllerAs: 'dashboard',
         withHeader: true,
-        viewClass: 'dashboardView'
+        viewClass: 'dashboardView',
+        title: 'Dashboard'
       })
       .otherwise({
         redirectTo: '/'
