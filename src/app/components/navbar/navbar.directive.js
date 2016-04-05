@@ -20,7 +20,7 @@
     /** @ngInject */
     function NavbarController($scope, $route) {
       var vm = this;
-      $scope.active = {href:$route.current.$$route.originalPath};
+      
     }
   }
 

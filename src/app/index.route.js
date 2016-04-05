@@ -8,12 +8,13 @@
   function routeConfig($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main',
+        templateUrl: 'app/intro/intro.html',
+        controller: 'IntroController',
+        controllerAs: 'intro',
         withHeader: false,
-        viewClass: 'mainView',
-        title: 'Main'
+        viewClass: 'introView',
+        title: 'Intro',
+        mainLink: true
       })
       .when('/dashboard', {
         templateUrl: 'app/dashboard/dashboard.html',
@@ -21,7 +22,41 @@
         controllerAs: 'dashboard',
         withHeader: true,
         viewClass: 'dashboardView',
-        title: 'Dashboard'
+        title: 'Dashboard',
+        mainLink: true,
+        subnav: ['/last10ww','/last5cp','/last100ny','/lastpbu']
+      })
+      .when('/last10ww', {
+        templateUrl: 'app/dashboard/dashboard.html',
+        controller: 'DashboardController',
+        controllerAs: 'dashboard',
+        withHeader: true,
+        viewClass: 'mapView last10ww',
+        title: 'Last 10 worldwide'
+      })
+      .when('/last5cp', {
+        templateUrl: 'app/dashboard/dashboard.html',
+        controller: 'DashboardController',
+        controllerAs: 'dashboard',
+        withHeader: true,
+        viewClass: 'mapView last5cp',
+        title: 'Last 5 by city'
+      })
+      .when('/last100ny', {
+        templateUrl: 'app/dashboard/dashboard.html',
+        controller: 'DashboardController',
+        controllerAs: 'dashboard',
+        withHeader: true,
+        viewClass: 'mapView last100ny',
+        title: 'Last 100 near you'
+      })
+      .when('/lastpbu', {
+        templateUrl: 'app/dashboard/dashboard.html',
+        controller: 'DashboardController',
+        controllerAs: 'dashboard',
+        withHeader: true,
+        viewClass: 'mapView lastpbu',
+        title: 'Last pictures by user'
       })
       .otherwise({
         redirectTo: '/'

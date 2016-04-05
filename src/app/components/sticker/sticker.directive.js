@@ -5,14 +5,14 @@
     .module('angularProject')
     .directive('sticker', sticker);
 
-  function sticker(){
+  function sticker(stickerFactory){
     function StickerController($scope){
     }
     return {
       restrict: 'E',
-      templateUrl: 'app/components/sticker/sticker.html',
+      templateUrl: stickerFactory.getTemplate(),
       controller: StickerController,
-      controllerAs: 'sticker',
+      controllerAs: 'stickerCtrl',
       scope: {
         stickerInfo: '='
       },

@@ -1,5 +1,12 @@
 <nav class="navbar" ng-if="withHeader">
   <ul class="container clearfix">
-    <li ng-repeat="link in links" ng-class="{active : link.href == active.href}"><a ng-href="#{{link.href}}">{{link.title}}</a></li>
+    <li ng-repeat="link in links" ng-class="{active : link.originalPath == active.href}">
+      <a ng-href="#{{link.originalPath}}" title="{{link.originalPath}}">{{link.title}}</a>
+      <ul ng-if="link.subnav" class="subnav">
+        <li ng-repeat="sublink in link.subnav" ng-class="{active : sublink.originalPath == active.href}">
+          <a ng-href="#{{sublink.originalPath}}">{{sublink.title}}</a>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>

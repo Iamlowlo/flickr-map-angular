@@ -7,17 +7,29 @@
 		$scope.$on('$routeChangeStart',function(next, current){
 			$scope.withHeader = current.$$route.withHeader;
 			$scope.viewClass = current.$$route.viewClass;
-
+			$scope.active = {href:current.$$route.originalPath};
 			$scope.links = [];
 			for (var routeId in $route.routes){
-				if ('title' in $route.routes[routeId]){
-					$scope.links.push({
-						href: $route.routes[routeId].originalPath,
-						title: $route.routes[routeId].title
-					});
+				if ('mainLink' in $route.routes[routeId]){
+					var newLink = linkMaker($route.routes[routeId]);
+					if ('subnav' in $route.routes[routeId]){
+						newLink.subnav = [];
+						$route.routes[routeId].subnav.forEach(function(subNavItem){
+							var newSubLink = linkMaker($route.routes[subNavItem]);
+							newLink.subnav.push(newSubLink);
+						});
+					}
+					$scope.links.push(newLink);
 				}
 			}
-		})
+		});
 
+		function linkMaker(rawRoute){
+			var link = {
+										title : rawRoute.title,
+										originalPath : rawRoute.originalPath
+									};
+			return link;
+		}
 	}
 })();

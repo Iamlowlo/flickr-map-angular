@@ -15,11 +15,9 @@ a:hover, a:focus {
     margin-bottom: 0;
     li {
       float: left;
-      position: relative;
       display: block;
       a {
         color: white;
-        position: relative;
         display: block;
         padding: 15px;
         line-height: 20px;
@@ -29,12 +27,35 @@ a:hover, a:focus {
           box-shadow: 0 -4px 0 $color_accent_3 inset;
         }
       }
-      &.active a {
-        background-color: $color_accent_3;
-        &:hover{
-          box-shadow: 0 -4px 0 $color_3 inset;
+      &.active {
+        > a {
+          background-color: $color_accent_3;
+          &:hover{
+            box-shadow: 0 -4px 0 $color_3 inset;
+          }
+        }
+        .subnav{
+          background: $color_accent_3;
         }
       }
+      &:hover{
+        .subnav{
+          display: flex;
+        }
+      }
+    }
+  }
+  .subnav{
+    display: none;
+    position: absolute;
+    top:100%;
+    flex-direction: column;
+    background-color: $color_3;
+    z-index: 1;
+    font-weight: 300;
+    font-size: 0.9em;
+    a{
+      background-color: rgba(255,255,255,0.2);
     }
   }
 }

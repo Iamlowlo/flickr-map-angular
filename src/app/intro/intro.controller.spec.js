@@ -6,7 +6,7 @@
 
     beforeEach(module('angularProject'));
     beforeEach(inject(function(_$controller_, _$timeout_) {
-      vm = _$controller_('MainController');
+      vm = _$controller_('IntroController');
     }));
 
   });
