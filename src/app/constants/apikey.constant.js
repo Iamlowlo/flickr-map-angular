@@ -3,6 +3,4 @@
 
   angular
     .module('angularProject')
-    .constant('FlickrAPI','')
-    .constant('GMapsAPI','');
 })();
