@@ -3,9 +3,12 @@
 
 	angular
 		.module('angularProject')
-		.controller('pbuController',PbuController);
+		.controller('pbuController',['$scope','flickrAPIService', PbuController]);
 
-	function PbuController($scope){
+	function PbuController($scope, flickrAPIService){
 
+		flickrAPIService.getUser('The_Pretender').success(function(data){
+			$scope.userName = data.user.username._content;
+		})
 	};
 })();
