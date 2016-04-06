@@ -52,8 +52,8 @@
       })
       .when('/lastpbu', {
         templateUrl: 'app/lastpbu/lastpbu.html',
-        controller: 'DashboardController',
-        controllerAs: 'dashboard',
+        controller: 'pbuController',
+        controllerAs: 'pbuCtrl',
         withHeader: true,
         viewClass: 'mapView lastpbu',
         title: 'Last pictures by user'
