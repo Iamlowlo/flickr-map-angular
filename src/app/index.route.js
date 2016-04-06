@@ -51,7 +51,7 @@
         title: 'Last 100 near you'
       })
       .when('/lastpbu', {
-        templateUrl: 'app/dashboard/dashboard.html',
+        templateUrl: 'app/lastpbu/lastpbu.html',
         controller: 'DashboardController',
         controllerAs: 'dashboard',
         withHeader: true,

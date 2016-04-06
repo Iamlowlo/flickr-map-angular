@@ -27,21 +27,25 @@
 	display: inline-block;
 	padding: 0.5em 0.9em;
 	cursor: pointer;
-	&.icon_rounded{
-		font-size: 1.3em;
-		height: 1.8em;
-		width: 1.9em;
-		padding: 0;
-		border-radius: 100%;
-		line-height: 1.8em;
-		text-align: center;
-	}
-	&.primary{
-		background: $color_2;
-		color: $polite_white;
-		border-bottom: 3px solid $color_accent_2;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid $color_1;
+  &.icon_rounded{
+    font-size: 1.3em;
+    height: 1.8em;
+    width: 1.9em;
+    padding: 0;
+    border-radius: 100%;
+    line-height: 1.8em;
+    text-align: center;
+  }
+  &.primary{
+    background: $color_4;
+    color: $polite_white;
+	  border-bottom-color: $color_accent_4;
 		&:hover{
-			background: darken($color_2,10);
+			background: darken($color_4,5);
 		}
 		&.active{
 			background: $color_accent_2;
@@ -52,7 +56,7 @@
 		background: $red_alert;
 		color: $polite_white;
 		&:hover{
-			background: darken($red_alert,10);
+			background: darken($red_alert,5);
 		}
 	}
 }

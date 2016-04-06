@@ -20,7 +20,8 @@
 				href: '/last100ny'
 			},{	
 				title: 'Last pictures taken by an user',
-				img: 'test.jpg'
+				img: 'test.jpg',
+				href: '/lastpbu'
 			}
 		]
 	}
