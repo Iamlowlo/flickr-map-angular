@@ -2,13 +2,14 @@
   <header>
     <h1>Last picture taken by an user</h1>
   </header>
-  <form ng-model="user" action="#" class="col_xs_12_12 col_sm_8_12 col_md_6_12 col_xlg_4_12">
+  <form action="#" class="col_xs_12_12 col_sm_8_12 col_md_6_12 col_xlg_4_12">
     <label for="userName">User Name</label>
-    <input name="userName" type="text" value="test text of proof">
+    <input ng-model="searchName" name="userName" type="text" value="test text of proof">
     <button class="btn primary">Search</button>
   </form>
   <article class="picture_list">
-    <h1>{{userName}}</h1>
+    <p ng-if="errorMessage" class="error_msg">{{errorMessage}}</p>
+    <h1 ng-if="userName">{{userName}}</h1>
     <ul>
       <li>Lista 1</li>
       <li>Lista 2</li>

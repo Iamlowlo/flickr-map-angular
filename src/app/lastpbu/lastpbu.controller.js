@@ -7,8 +7,13 @@
 
 	function PbuController($scope, flickrAPIService){
 
-		flickrAPIService.getUser('The_Pretender').success(function(data){
-			$scope.userName = data.user.username._content;
-		})
+		flickrAPIService.getUser($scope.searchName)
+			.success(function(data){
+				if (data.stat == 'ok'){
+					$scope.userName = data.user.username._content;
+				}else{
+					$scope.errorMessage = data.message;
+				}
+			})
 	};
 })();
