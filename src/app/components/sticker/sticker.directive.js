@@ -6,11 +6,14 @@
     .directive('sticker', sticker);
 
   function sticker(stickerFactory){
-    function StickerController($scope){
+    function StickerController($scope, stickerFactory){
+      $scope.getTemplate = function(){
+          return stickerFactory.getTemplate($scope.stickerCtrl.stickerInfo.href);
+        };
     }
     return {
       restrict: 'E',
-      templateUrl: stickerFactory.getTemplate(),
+      template: '<article class="sticker" ng-include src="getTemplate()">',
       controller: StickerController,
       controllerAs: 'stickerCtrl',
       scope: {

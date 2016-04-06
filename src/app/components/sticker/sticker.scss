@@ -1,7 +1,7 @@
 .sticker{
     border: 1px solid $color_1;
     padding: 2em 2em 3em;
-  & > img{
+  &_img{
     display: block;
     position: relative;
     width: 100%;
@@ -34,5 +34,11 @@
   }
   h1{
     font-size: 1.8em;
+  }
+  a{
+    color: $color_2;
+    &:hover{
+      color: darken($color_2,5);
+    }
   }
 }
