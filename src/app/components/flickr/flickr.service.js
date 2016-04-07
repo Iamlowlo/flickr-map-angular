@@ -11,13 +11,13 @@
       return $http.get(basePath + '&method=flickr.people.findByUsername&username=' + username);
     }
 
-    this.getPublicUserPhotos = function(userId, qty){
+    this.getUserPublicPhotos = function(userId, qty){
       if (typeof qty !== 'undefined') {
         qty = '&per_page='+qty;
       } else {
         qty = '';
       }
-      return $http.get(basePath + '&method=flickr.people.getPublicPhotos&extras=url_t&user_id=' + userId + qty);
+      return $http.get(basePath + '&method=flickr.people.getPublicPhotos&extras=url_t,geo,date_taken,tags,views&user_id=' + userId + qty);
     }
   }
   

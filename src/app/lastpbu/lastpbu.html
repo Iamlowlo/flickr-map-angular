@@ -7,18 +7,22 @@
     <input ng-model="searchName" name="userName" type="text" value="test text of proof">
     <button class="btn primary">Search</button>
   </form>
-  <article class="picture_list veil_holder">
+  <section class="picture_list veil_holder">
     <p ng-if="errorMessage" class="error_msg">{{errorMessage}}</p>
-    <h1 ng-if="userName">{{userName}}</h1>
+    <h1 class="picture_list_title" ng-if="userName">{{userName}}</h1>
 
     <ul ng-if="userPhotos">
       <li ng-repeat="photo in userPhotos">
-        <div class="thumbnail">
-          <img ng-src="{{photo.url_t}}" alt="{{photo.title}}">
-        </div>
-        <span>{{photo.title}}</span>
+        <picture-info 
+          title="photo.title"
+          src="photo.url_t"
+          date="photo.datetaken"
+          tags="photo.tags"
+          views="photo.views"
+          lat="photo.latitude"
+          lng="photo.longitude"></picture-info>
       </li>
     </ul>
     <veil showing="userPicsVeil"></veil>
-  </article>
+  </section>
 </section>

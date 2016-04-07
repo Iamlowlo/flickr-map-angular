@@ -1,0 +1,12 @@
+<article class="picture_info">
+  <div class="thumbnail">
+    <img ng-src="{{picInfCtrl.src}}" alt="{{picInfCtrl.title}}">
+  </div>
+  <div class="picture_data">
+    <h1 class="picture_title">{{picInfCtrl.title}}</h1>
+    <dl ng-if="picExtraInfo">
+      <dt ng-repeat-start="infoItem in picExtraInfo">{{infoItem.title}}</dt>
+      <dd ng-repeat-end>{{infoItem.content}}</dd>
+    </dl>
+  </div>
+</article>

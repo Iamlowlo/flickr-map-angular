@@ -7,6 +7,9 @@
 
 	function PbuController($scope, flickrAPIService){
 		$scope.userPicsVeil=false;
+		
+		$scope.searchName = 'The_Pretender';
+
 		$scope.searchUser = function(){
 			$scope.userPicsVeil=true;
 			flickrAPIService.getUser($scope.searchName)
@@ -16,10 +19,10 @@
 						delete $scope.errorMessage;
 						console.log(getUserData.user);
 						$scope.userName = getUserData.user.username._content;
-						flickrAPIService.getPublicUserPhotos(getUserData.user.id, 30)
-							.success(function(getPublicUserPhotosData){
-								console.log(getPublicUserPhotosData.photos);
-								$scope.userPhotos = getPublicUserPhotosData.photos.photo;
+						flickrAPIService.getUserPublicPhotos(getUserData.user.id, 1)
+							.success(function(getUserPublicPhotosData){
+								console.log(getUserPublicPhotosData.photos);
+								$scope.userPhotos = getUserPublicPhotosData.photos.photo;
 							});
 					}else{
 						delete $scope.userName;

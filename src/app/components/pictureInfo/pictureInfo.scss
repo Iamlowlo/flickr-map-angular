@@ -1,0 +1,20 @@
+.picture_info{
+  display: table;
+  width: 100%;
+  padding: 1em 0.8em;
+  margin-bottom: 0.8em;
+  border: 2px solid $color_3;
+  .picture_title{
+    font-size: 1em;
+    font-weight: normal; 
+  }
+  .thumbnail{
+    display: table-cell;
+    vertical-align: top;
+  }
+  .picture_data{
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 1em;
+  }
+}
