@@ -7,6 +7,11 @@
 
   function sticker(stickerFactory){
     function StickerController($scope, stickerFactory){
+      if (typeof $scope.stickerCtrl.stickerInfo.alt !== 'undefined') {
+        $scope.imgAlt = $scope.stickerCtrl.stickerInfo.alt;
+      } else {
+        $scope.imgAlt = $scope.stickerCtrl.stickerInfo.title;
+      }
       $scope.getTemplate = function(){
           return stickerFactory.getTemplate($scope.stickerCtrl.stickerInfo.href);
         };

@@ -1,36 +1,12 @@
 .sticker{
-    border: 1px solid $color_1;
-    padding: 2em 2em 3em;
+  border: 1px solid $color_1;
+  padding: 2em 2em 3em;
   &_img{
     display: block;
     position: relative;
     width: 100%;
     min-height: 8em;
     margin-bottom: 1.5em;
-    &:before{
-      content:"";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: $color_4;
-      border: 2px solid $color_accent_4;
-    }
-    &:after{
-      content: "Image " attr(alt) " not found";
-      color: $polite_white;
-      font-size: 1em;
-      font-weight: 300;
-      width: 100%;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      text-align: center;
-      padding: 1em;
-      box-sizing: border-box;
-    }
   }
   h1{
     font-size: 1.8em;

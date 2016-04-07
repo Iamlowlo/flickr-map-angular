@@ -79,7 +79,6 @@
 		flex: 1;
 	}
 }
-
 .error_msg{
   display: inline-block;
   color: $color_2;
@@ -88,4 +87,43 @@
   margin-bottom: 1em;
   font-size: 0.8em;
   font-weight: bold;
+}
+.thumbnail{
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 66px;
+    height: 66px;
+    img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+}
+img{
+  &:before{
+    content:"";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $color_4;
+    border: 2px solid $color_accent_4;
+  }
+  &:after{
+    content: "Image \"" attr(alt) "\" not found";
+    color: $polite_white;
+    font-size: 1em;
+    font-weight: 300;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    padding: 1em;
+    box-sizing: border-box;
+  }
 }

@@ -1,21 +1,24 @@
 <section class="container">
   <header>
-    <h1>Last picture taken by an user</h1>
+    <h1>Last pictures taken by an user</h1>
   </header>
-  <form action="#" class="col_xs_12_12 col_sm_8_12 col_md_6_12 col_xlg_4_12">
+  <form ng-submit="searchUser()" class="col_xs_12_12 col_sm_8_12 col_md_6_12 col_xlg_4_12">
     <label for="userName">User Name</label>
     <input ng-model="searchName" name="userName" type="text" value="test text of proof">
     <button class="btn primary">Search</button>
   </form>
-  <article class="picture_list">
+  <article class="picture_list veil_holder">
     <p ng-if="errorMessage" class="error_msg">{{errorMessage}}</p>
     <h1 ng-if="userName">{{userName}}</h1>
-    <ul>
-      <li>Lista 1</li>
-      <li>Lista 2</li>
-      <li>Lista 3</li>
-      <li>Lista 4</li>
-      <li>Lista 5</li>
+
+    <ul ng-if="userPhotos">
+      <li ng-repeat="photo in userPhotos">
+        <div class="thumbnail">
+          <img ng-src="{{photo.url_t}}" alt="{{photo.title}}">
+        </div>
+        <span>{{photo.title}}</span>
+      </li>
     </ul>
+    <veil showing="userPicsVeil"></veil>
   </article>
 </section>
