@@ -19,6 +19,15 @@
       }
       return $http.get(basePath + '&method=flickr.people.getPublicPhotos&extras=url_t,geo,date_taken,tags,views&user_id=' + userId + qty);
     }
+
+    this.getLastWWPictures = function(qty){
+      if (typeof qty !== 'undefined') {
+        qty = qty;
+      } else {
+        qty = 10;
+      }
+      return $http.get(basePath + '&method=flickr.photos.getRecent&extras=url_t,geo,date_taken,tags,views&per_page=' + qty);
+    }
   }
   
 })();

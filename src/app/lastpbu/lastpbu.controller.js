@@ -8,25 +8,32 @@
 	function PbuController($scope, flickrAPIService){
 		$scope.userPicsVeil=false;
 		
-		$scope.searchName = 'The_Pretender';
+		//$scope.searchName = 'The_Pretender';
 
 		$scope.searchUser = function(){
 			$scope.userPicsVeil=true;
 			flickrAPIService.getUser($scope.searchName)
 				.success(function(getUserData){
+					console.log(getUserData);
 					$scope.userPicsVeil=false;
 					if (getUserData.stat == 'ok'){
 						delete $scope.errorMessage;
-						console.log(getUserData.user);
+						//console.log(getUserData.user);
 						$scope.userName = getUserData.user.username._content;
-						flickrAPIService.getUserPublicPhotos(getUserData.user.id, 1)
+						delete $scope.userPhotos;
+						flickrAPIService.getUserPublicPhotos(getUserData.user.id, 20)
 							.success(function(getUserPublicPhotosData){
 								console.log(getUserPublicPhotosData.photos);
-								$scope.userPhotos = getUserPublicPhotosData.photos.photo;
+								if (getUserPublicPhotosData.photos.total === '0') {
+									$scope.errorMessage = 'No public photos on this user';
+								} else {
+									delete $scope.errorMessage;
+									$scope.userPhotos = getUserPublicPhotosData.photos.photo;
+								}
 							});
 					}else{
 						delete $scope.userName;
-						$scope.errorMessage = data.message;
+						$scope.errorMessage = getUserData.message;
 					}
 				});
 		};

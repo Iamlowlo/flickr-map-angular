@@ -4,9 +4,11 @@
   </div>
   <div class="picture_data">
     <h1 class="picture_title">{{picInfCtrl.title}}</h1>
-    <dl ng-if="picExtraInfo">
-      <dt ng-repeat-start="infoItem in picExtraInfo">{{infoItem.title}}</dt>
-      <dd ng-repeat-end>{{infoItem.content}}</dd>
-    </dl>
+    <table ng-if="picExtraInfo">
+      <tr ng-repeat="infoItem in picExtraInfo">
+        <td>{{infoItem.title}}</td>
+        <td ng-bind-html="infoItem.content"></td>
+      </tr>
+    </table>
   </div>
 </article>

@@ -12,9 +12,9 @@
     font-size: 1.8em;
   }
   a{
-    color: $color_2;
+    color: $color_4;
     &:hover{
-      color: darken($color_2,5);
+      color: $color_accent_4;
     }
   }
 }

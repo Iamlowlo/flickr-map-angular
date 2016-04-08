@@ -27,9 +27,9 @@
         subnav: ['/last10ww','/last5cp','/last100ny','/lastpbu']
       })
       .when('/last10ww', {
-        templateUrl: 'app/dashboard/dashboard.html',
+        templateUrl: 'app/last10ww/last10ww.html',
         controller: 'DashboardController',
-        controllerAs: 'dashboard',
+        controllerAs: 'wwCtrl',
         withHeader: true,
         viewClass: 'mapView last10ww',
         title: 'Last 10 worldwide'

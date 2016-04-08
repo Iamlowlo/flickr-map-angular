@@ -19,15 +19,22 @@
         $scope.picExtraInfo.push({ title : 'Views: ', content : $scope.picInfCtrl.views })
       }
       if ($scope.picInfCtrl.tags !== '') {
-        $scope.picExtraInfo.push({ title : 'Tags: ', content : $scope.picInfCtrl.tags })
+        $scope.picExtraInfo.push({ title : 'Tags: ', content : tagMaker($scope.picInfCtrl.tags) })
+      }
+      function tagMaker(tagsOnAString){
+        var decoratedTags = '';
+        tagsOnAString.split(' ').forEach(function(tagItem){
+          decoratedTags += '<span class="tag">'+escape(tagItem)+'</span>';
+        });
+        return decoratedTags;
       }
     };
 
     return{
       restrict : 'E',
       scope: {
-          title : '=title',
-          src : '=src',
+          title : '=pictitle',
+          src : '=picsrc',
           date : '=date',
           views : '=views',
           tags : '=tags',

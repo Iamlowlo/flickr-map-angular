@@ -1,14 +1,8 @@
 <section class="container">
   <header>
-    <h1 class="main_title">Last pictures taken by an user</h1>
+    <h1 class="main_title">Last 10 pictures uploaded worldwide</h1>
   </header>
-  <form ng-submit="searchUser()" class="col_xs_12_12 col_sm_8_12 col_md_6_12 col_xlg_4_12">
-    <label for="userName">User Name</label>
-    <input ng-model="searchName" name="userName" type="text" value="test text of proof">
-    <button class="btn primary">Search</button>
-  </form>
   <section class="picture_list veil_holder">
-    <h1 class="picture_list_title" ng-if="userName">{{userName}}</h1>
     <p ng-if="errorMessage" class="error_msg">{{errorMessage}}</p>
     <ul ng-if="userPhotos">
       <li ng-repeat="photo in userPhotos">
