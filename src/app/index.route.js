@@ -28,7 +28,7 @@
       })
       .when('/last10ww', {
         templateUrl: 'app/last10ww/last10ww.html',
-        controller: 'DashboardController',
+        controller: 'lastWWController',
         controllerAs: 'wwCtrl',
         withHeader: true,
         viewClass: 'mapView last10ww',

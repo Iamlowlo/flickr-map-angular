@@ -23,7 +23,7 @@
 						delete $scope.userPhotos;
 						flickrAPIService.getUserPublicPhotos(getUserData.user.id, 20)
 							.success(function(getUserPublicPhotosData){
-								console.log(getUserPublicPhotosData.photos);
+								//console.log(getUserPublicPhotosData.photos);
 								if (getUserPublicPhotosData.photos.total === '0') {
 									$scope.errorMessage = 'No public photos on this user';
 								} else {
