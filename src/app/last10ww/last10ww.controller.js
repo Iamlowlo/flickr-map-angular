@@ -1,1 +1,4 @@
-last10ww.html
+(function(){
+	'use strict';
+	
+})();
