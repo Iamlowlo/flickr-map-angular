@@ -4,6 +4,10 @@
   padding: 1em;
   margin-bottom: 0.8em;
   border: 2px solid $color_3;
+  a{
+    display: block;
+    color: $polite_black;
+  }
   .thumbnail{
     display: table-cell;
     vertical-align: top;

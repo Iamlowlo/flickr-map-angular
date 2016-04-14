@@ -39,7 +39,8 @@
           views : '=views',
           tags : '=tags',
           lat : '=lat',
-          lng : '=lng'
+          lng : '=lng',
+          id : '=id'
         },
       templateUrl : 'app/components/pictureInfo/pictureInfo.html',
       controller: PictureInfoController,

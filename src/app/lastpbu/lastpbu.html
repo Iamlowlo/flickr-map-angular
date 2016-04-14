@@ -13,6 +13,7 @@
     <ul ng-if="userPhotos">
       <li ng-repeat="photo in userPhotos">
         <picture-info 
+          id="photo.id"
           pictitle="photo.title"
           picsrc="photo.url_t"
           date="photo.datetaken"

@@ -101,6 +101,9 @@
       transform: translate(-50%, -50%);
     }
 }
+.img_container{
+  position: relative;
+}
 img{
   &:before{
     content:"";
@@ -126,4 +129,9 @@ img{
     padding: 1em;
     box-sizing: border-box;
   }
+}
+
+.small_text{
+  font-size: 0.8em;
+  font-weight: 100;
 }

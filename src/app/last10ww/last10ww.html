@@ -3,11 +3,12 @@
     <h1 class="main_title">Last 10 pictures uploaded worldwide</h1>
   </header>
   <section class="picture_list veil_holder">
-    <h1>{{timeWhenAsked}}</h1>
+    <h1 ng-if="timeWhenAsked" class="picture_list_title">Checked at: <span class="small_text">{{timeWhenAsked}}</span></h1>
     <p ng-if="errorMessage" class="error_msg">{{errorMessage}}</p>
     <ul ng-if="lastPictures">
-      <li ng-repeat="photo in lastPictures">
+      <li ng-repeat="photo in lastPictures" class="col_md_6_12">
         <picture-info 
+          id="photo.id"
           pictitle="photo.title"
           picsrc="photo.url_t"
           date="photo.datetaken"
