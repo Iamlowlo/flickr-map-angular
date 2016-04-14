@@ -7,8 +7,8 @@
 
 	function DateService() {
 		this.getFormattedTime = function(date){
-			return 	date.getDate()
-					+'/'+(date.getMonth()+1)
+			return 	this.twoDigitsValue(date.getDate())
+					+'/'+this.twoDigitsValue(date.getMonth()+1)
 					+'/'+date.getFullYear()
 					+' '+date.getHours()
 					+':'+this.twoDigitsValue(date.getMinutes())
