@@ -58,6 +58,14 @@
         viewClass: 'mapView lastpbu',
         title: 'Last pictures by user'
       })
+      .when('/picInfo/:id', {
+        templateUrl: 'app/picInfo/picInfo.html',
+        controller: 'picInfoController',
+        controllerAs: 'picInfoCtrl',
+        withHeader: true,
+        viewClass: 'picInfo',
+        title: 'Close view of the picture:'
+      })
       .otherwise({
         redirectTo: '/'
       });

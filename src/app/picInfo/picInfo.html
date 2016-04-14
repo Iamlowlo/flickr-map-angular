@@ -1,0 +1,8 @@
+<section class="container" ng-if="picInfoFulfilled&&picUrlsFulfilled">
+  <h1 class="main_title">{{title}} <span class="small_text">by</span> {{author}}</h1>
+  <h2><span class="small_text">Uploaded on</span> {{date}}</h2>
+  <div class="img_container">
+    <img ng-src="{{src.xxl}}" alt="{{title}}">
+  </div>
+  <p ng-if="description" class="picDescription">{{description}}</p>
+</section>
