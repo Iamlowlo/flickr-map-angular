@@ -28,6 +28,15 @@
       }
       return $http.get(basePath + '&method=flickr.photos.getRecent&extras=url_t,geo,date_taken,tags,views&per_page=' + qty);
     }
+
+    this.getPicInfo = function(photoId){
+      return $http.get(basePath + '&method=flickr.photos.getInfo&photo_id='+photoId);
+    }
+
+    this.getPicUrls = function(photoId){
+      return $http.get(basePath + '&method=flickr.photos.getSizes&photo_id='+photoId);
+    }
   }
   
 })();
+
