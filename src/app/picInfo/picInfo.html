@@ -1,8 +1,20 @@
 <section class="container" ng-if="picInfoFulfilled&&picUrlsFulfilled">
   <h1 class="main_title">{{title}} <span class="small_text">by</span> {{author}}</h1>
   <h2><span class="small_text">Uploaded on</span> {{date}}</h2>
-  <div class="img_container">
-    <img ng-src="{{src.xxl}}" alt="{{title}}">
+  <div class="picInfoContainer">
+    <div class="img_container col_md_6_12">
+      <img ng-src="{{mainImg.source}}" alt="{{title}}">
+    </div>
+    <div class="picContent col_md_6_12">
+      <p ng-if="description" class="picDescription">{{description}}</p>
+      <p class="tagCloud">
+        <span ng-repeat="tag in tags" class="tag">{{tag._content}}</span>
+      </p>
+      <ul class="picSizesList">
+        <li ng-repeat="size in sizes">
+          <a ng-href="{{size.source}}" target="_blank">{{size.label}} ({{size.width}}x{{size.height}})</a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <p ng-if="description" class="picDescription">{{description}}</p>
 </section>

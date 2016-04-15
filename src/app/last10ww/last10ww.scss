@@ -8,8 +8,12 @@
       display: flex;
       flex-wrap: wrap;
     }
-    li{
+    li,
+    picture-info,
+    .picture_info{
+      display: flex;
       flex-grow:1;
+      height: auto;
     }
   }
 }

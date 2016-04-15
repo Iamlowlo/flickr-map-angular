@@ -8,11 +8,33 @@
     margin-bottom: 1em;
     color: $color_4;
   }
+  .picInfoContainer{
+    display: flex;
+    margin-left: -$column_gap;
+    margin-right: -$column_gap;
+  }
   .img_container{
     min-height: 100px;
     max-width: 100%;
     img{
       max-width: 100%;
+    }
+  }
+  .picDescription,
+  .tagCloud{
+    margin-bottom: 1em;
+  }
+  .picSizesList{
+    li{
+      margin-bottom: 0.5em;
+    }
+    a{
+      display: inline-block;
+      padding: 0.3em 0.2em;
+      color: $color_4;
+      &:hover{
+        color: $color_accent_4;
+      }
     }
   }
 }
