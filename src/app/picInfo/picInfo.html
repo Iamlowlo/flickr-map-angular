@@ -10,11 +10,13 @@
       <p class="tagCloud">
         <span ng-repeat="tag in tags" class="tag">{{tag._content}}</span>
       </p>
-      <ul class="picSizesList">
-        <li ng-repeat="size in sizes">
-          <a ng-href="{{size.source}}" target="_blank">{{size.label}} ({{size.width}}x{{size.height}})</a>
-        </li>
-      </ul>
+      <dropdown ng-if="sizes" dropdown-title="'Size list'" is-collapsed="false">
+        <ul class="picSizesList">
+          <li ng-repeat="size in sizes">
+            <a ng-href="{{size.source}}" target="_blank">{{size.label}} ({{size.width}}x{{size.height}})</a>
+          </li>
+        </ul>
+      </dropdown>  
     </div>
   </div>
 </section>

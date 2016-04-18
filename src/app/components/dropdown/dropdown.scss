@@ -1,0 +1,35 @@
+.dropdown_title{
+  position: relative;
+  border: 1px solid $color_3;
+  padding: 0.5em;
+  i{
+    position: absolute;
+    line-height: 1em;
+    height: 1em;
+    top: 0;
+    bottom: 0;
+    right: 0.5em;
+    margin: auto;
+  }
+}
+.dropdown_content{
+  position: absolute;
+  padding: 0 0.5em;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid $color_3;
+  border-left: 1px solid $color_3;
+  border-right: 1px solid $color_3;
+  &.collapsed{
+    border-bottom: 0;
+    height: 0;
+  }
+  >ul{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+}
+dropdown{
+  display: block;
+  position: relative;
+}

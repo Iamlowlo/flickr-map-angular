@@ -16,7 +16,8 @@
     font-size: 1.1em;
     font-weight: normal; 
     margin-bottom: 0.8em;
-    color: $color_3;  
+    color: $color_3;
+    word-break: break-word;
   }
   .picture_data{
     display: table-cell;
