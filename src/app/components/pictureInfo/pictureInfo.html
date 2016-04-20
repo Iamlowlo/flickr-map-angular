@@ -1,16 +1,25 @@
 <article class="picture_info">
-  <a ng-href="#/picInfo/{{picInfCtrl.id}}">
     <div class="thumbnail">
       <img ng-src="{{picInfCtrl.src}}" alt="{{picInfCtrl.title}}">
     </div>
     <div class="picture_data">
-      <h1 class="picture_title">{{picInfCtrl.title}}</h1>
+      <h1 class="picture_title">
+        <a ng-href="#/picInfo/{{picInfCtrl.id}}">{{picInfCtrl.title}}</a></h1>
       <table ng-if="picExtraInfo">
         <tr ng-repeat="infoItem in picExtraInfo">
           <td>{{infoItem.title}}</td>
-          <td ng-bind-html="infoItem.content"></td>
+          <td ng-if="infoItem.title !== 'Geo'" ng-bind-html="infoItem.content"></td>
+          <td ng-if="infoItem.title == 'Geo'">
+            <ui-gmap-google-map
+                center='map.center'
+                zoom='map.zoom'
+                options='map.options'>
+                <ui-gmap-marker 
+                  coords="map.center" idkey="1">
+                </ui-gmap-marker>
+            </ui-gmap-google-map>
+          </td>
         </tr>
       </table>
     </div>
-  </a>
 </article>

@@ -23,14 +23,21 @@
     display: table-cell;
     vertical-align: top;
     padding-left: 1em;
-    td:first-child{
-      font-size: 0.9em;
-      padding: 0.4em 0;
-      width: 70px;
+    td{
+      vertical-align: top;
+      font-size: 0.8em;
+      padding-bottom: 0.8em;
+      &:first-child{
+        font-size: 0.9em;
+        width: 70px;
+      }
+      &:nth-child(n+1){
+        font-weight: 100;
+      }
     }
-    td:nth-child(n+1){
-      font-size: 0.9em;
-      font-weight: 100;
-    }
+  }
+  .angular-google-map-container{
+    height: 200px;
+    width: 200px;
   }
 }

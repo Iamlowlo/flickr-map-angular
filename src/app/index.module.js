@@ -9,6 +9,7 @@
 								'ngMessages', 
 								'ngAria', 
 								'ngResource', 
-								'ngRoute']);
+                'ngRoute', 
+								'uiGmapgoogle-maps']);
 
 })();
