@@ -6,30 +6,31 @@
     .directive('dropdown',[dropdownDirective]);
 
   function dropdownController($scope) {
-    console.log($scope.isCollapsed);
+    // variable setUp
     if (typeof $scope.isCollapsed == 'undefined') {
       $scope.isCollapsed = false;
     }
+
+    //methods setUp
+    $scope.toggleDropdown = toggleDropdown;
+    
+    function toggleDropdown() {
+      console.log($scope.isCollapsed);
+      $scope.isCollapsed = !$scope.isCollapsed;
+    }
   }
 
-  function dropdownLink($scope, element) {
-    console.log($scope.isCollapsed);
-    element.on('click', function(e){
-      $scope.isCollapsed = !$scope.isCollapsed;
-    })
-  }
 
   function dropdownDirective() {
-    console.log('directive');
     return {
       strict : 'E',
       templateUrl: 'app/components/dropdown/dropdown.html',
       transclude: true,
       scope: {
-        title: '=dropdownTitle'
+        title: '=dropdownTitle',
+        isCollapsed: '='
       },
-      controller: dropdownController,
-      link: dropdownLink
+      controller: dropdownController
     }
   }
 

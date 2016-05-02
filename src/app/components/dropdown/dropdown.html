@@ -1,2 +1,2 @@
-<div class="dropdown_title">{{title}}<i class="icon-keyboard_arrow_down"></i></div>
-<div class="dropdown_content" ng-transclude></div>
+<div class="dropdown_title" ng-click="toggleDropdown()">{{title}}<i class="icon-keyboard_arrow_down" ng-class="{spinned_acw:!isCollapsed}"></i></div>
+<div class="dropdown_content" ng-transclude ng-class="{collapsed:isCollapsed}"></div>
